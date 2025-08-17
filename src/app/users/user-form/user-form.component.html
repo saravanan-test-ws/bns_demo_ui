@@ -1,0 +1,32 @@
+<mat-card>
+  <h2>{{ isEdit ? 'Update User' : 'Add User' }}</h2>
+  <form (ngSubmit)="save()">
+    <mat-form-field appearance="fill">
+      <mat-label>First Name</mat-label>
+      <input matInput [(ngModel)]="user.firstName" name="firstName" required>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Last Name</mat-label>
+      <input matInput [(ngModel)]="user.lastName" name="lastName" required>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput [(ngModel)]="user.emailId" name="emailId" required>
+    </mat-form-field>
+    <mat-form-field appearance="fill" *ngIf="!isEdit">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" [(ngModel)]="user.password" name="password" required>
+    </mat-form-field>
+    <mat-form-field appearance="fill" *ngIf="!isEdit">
+      <mat-label>Confirm Password</mat-label>
+      <input matInput type="password" [(ngModel)]="confirmPassword" name="confirmPassword" required>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Role</mat-label>
+      <input matInput [(ngModel)]="user.role" name="role" required>
+    </mat-form-field>
+    <div *ngIf="passwordMismatch" style="color: red; font-size: 0.9em;">Passwords do not match.</div>
+    <button mat-raised-button color="primary" type="submit" [disabled]="!formValid()">{{ isEdit ? 'Update' : 'Add' }}</button>
+    <button mat-button type="button" (click)="router.navigate(['/users'])">Cancel</button>
+  </form>
+</mat-card>

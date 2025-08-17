@@ -1,0 +1,31 @@
+mat-card {
+  margin: 24px;
+  padding: 24px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+table {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+
+table.mat-table th.mat-header-cell {
+  font-weight: bold !important;
+  background: #ffe5e5 !important;
+  color: #b71c1c !important;
+  font-size: 1.05em !important;
+}
+
+td.mat-cell button.mat-icon-button img {
+  display: inline-block;
+  vertical-align: middle;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  filter: none;
+}

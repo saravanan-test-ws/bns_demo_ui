@@ -1,0 +1,20 @@
+@import 'custom-theme';
+/* You can add global styles to this file, and also import other style files */
+
+/* Force table header style for all Angular Material tables (legacy) */
+
+/* Most reliable: custom class for header row */
+::ng-deep tr.custom-header-row th {
+	font-weight: bold !important;
+	background: #ffe5e5 !important;
+	color: #b71c1c !important;
+	font-size: 1.05em !important;
+}
+
+/* Force table header style for all Angular Material tables */
+table.mat-table th.mat-header-cell {
+	font-weight: bold !important;
+	background: #ffe5e5 !important;
+	color: #b71c1c !important;
+	font-size: 1.05em !important;
+}
